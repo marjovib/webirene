@@ -1,0 +1,22 @@
+---------------------------pasos para poder tener soporte intellisense de tailwind
+
+1-Lo que sigue permite generar el archivo completo tailwind.css que es necesario para intellisense
+-npx tailwindcss -o tailwind.css --watch              //desde el directorio raiz
+
+2-El fichero resultante es demasiado grande (>4mb) para la configuracion por defecto de webstorm (2,56)por lo que
+  hay que cambiar la en Help/Edit Custom Properties
+  agregar esta linea
+
+  idea.max.intellisense.filesize=5000
+
+3-no olvidar las extensiones del purge en tailwind.config {svelte,js,html}
+    purge: [
+       './public/**/*.html',
+         '.src/**/*.{svelte,js,html}'
+     ],
+
+2-Por si acaso borrar cache en
+File/InvalidateCaches
+
+----------------------------------------------------Agregar una fuente----------------------------------------------------------------
+en index.css importar la fuente
